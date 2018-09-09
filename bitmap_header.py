@@ -10,9 +10,6 @@ class BmpHeader:
         self.reserved2 = bytearray(2)
         self.startofdata = bytearray((54).to_bytes(4, 'little'))
         self.sizeofinfoheader = bytearray((40).to_bytes(4, 'little'))
-
-        if not width % 2:
-            width += 1
         self.width = bytearray(width.to_bytes(4, 'little'))
         self.height = bytearray(height.to_bytes(4, 'little'))
         self.plane = bytearray((1).to_bytes(2, 'little'))
